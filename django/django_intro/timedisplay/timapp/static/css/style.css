@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: azure;
+}
+h1{
+    margin: 100px;
+    text-align: center;
+    color: rgb(184, 97, 97);
+    padding: 5px;
+    margin: 20px;
+    border: 2px solid black;
+    width: 400px;
+}
+p{
+    text-align: center;
+    color: rgb(70, 13, 13);
+    font-size: x-large;
+    padding: 5px;
+    margin: 20px;
+    border: 2px solid black;
+    width: 600px;
+
+}

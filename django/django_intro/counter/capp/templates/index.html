@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    
+</head>
+<body>
+    <center>
+    <h1> Counter</h1>
+    <p>{{request.session.counter}} Times</p>
+    <form action="/destroy" method="POST">
+         {% csrf_token %}
+        <button type="submit" name="reset">Reset</button>
+       
+    </form>
+    <form action="/add2" method="POST">
+        {% csrf_token %}
+        <button type="submit" name="add2">ADD Two</button>
+   </form>
+
+</form>
+<form action="/addnumber" method="POST">
+    {% csrf_token %}
+    <input type="text" name="addn">
+    <button type="submit">ADD A Number</button>
+    
+</form>
+   </center>
+   
+</body>
+</html>

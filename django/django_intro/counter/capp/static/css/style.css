@@ -1,0 +1,21 @@
+
+body{
+    background-color: bisque;
+}
+form{
+    display: inline-block;
+}
+h1{
+    color: chocolate;
+}
+button{
+    width: 140px;
+    height: 60px;
+    background-color: rgb(168, 61, 83);
+    color: darkgrey;
+    margin: 30px;
+    padding: 10px;
+}
+p{
+    font-size: x-large;
+}
