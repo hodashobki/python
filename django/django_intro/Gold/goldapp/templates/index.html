@@ -47,12 +47,26 @@
             </form>
         </div>
     </main>
+    <center>
+    <div>
+        <form action="/reset" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Play again">
+        </form>
+    </div>
     <div class="active">
         <h4>Activities</h4>
         {% for active in request.session.activity %}
-        <p> {{active}}</p>
+        {% if "Lost" in active %}
+        <p id="green"> {{active}}</p>
+        {% endif %}
+        {% if "Earned" in active %}
+        <p id="red"> {{active}}</p>
+        {% endif %}
+
         {% endfor %}
     </div>
+</center>
     
 </body>
 </html>

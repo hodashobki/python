@@ -32,6 +32,10 @@ def colgold(request):
                 active=f"Lost {x} from casino... ouch... at {time}"       
     
         request.session['your']+=x 
-        request.session["activity"].append(active)      
+        request.session["activity"].insert(0,active)      
     
-    return redirect('/')            
+    return redirect('/')    
+
+def reset(request):
+    request.session.clear()
+    return redirect('/')
