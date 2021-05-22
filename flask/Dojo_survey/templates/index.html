@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <form action="/survey" method="POST">
+        <label for="user-name">Your Name: </label>
+        <input type="text" name="user-name" id="user-name">
+        
+        <label for="drop">Palestine locations</label>
+        <select name="location" id="drop">
+            <option value="Jerusalem">Jerusalem</option>
+            <option value="Hebron">Hebron</option>
+            <option value="Ramallah">Ramallah</option>
+            <option value="Nablus">Nablus</option>
+        </select>
+        
+        <p>Favorite Language</p>
+        <label for="py">Python</label>
+        <input type="radio" name="language" id="py" value="Python">
+        <label for="ja">Java</label>
+        <input type="radio" name="language" id="ja" value="Java">
+        <label for="php">PHP</label>
+        <input type="radio" name="language" id="php" value="PHP">
+        <label for="ru">Ruby</label>
+        <input type="radio" name="language" id="ru" value="Ruby">
+
+        <h3>Courses you have already taken</h3>
+        <label for="py"> Python</label>
+        <input type="checkbox" id="py" name="pyth" value="Python">
+        <label for="ja"> Java</label>
+        <input type="checkbox" id="ja" name="pyth" value="Java">
+        <label for="ru"> Ruby</label>
+        <input type="checkbox" id="ru" name="pyth" value="Ruby">
+
+        <p>Comment (optional)</p>
+        <textarea name="comment"  cols="50" rows="5"></textarea>
+        <input type="submit" value="Click here to submit">
+        
+
+    </form>
+    
+</body>
+</html>
