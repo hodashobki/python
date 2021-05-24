@@ -5,22 +5,35 @@ import random
 def index(request):
     if "numbers" not in request.session:
         request.session ["numbers"]=random.randint(1, 100)
+        print( request.session ["numbers"])
     
     return render(request,"index.html")
 
 
 def guess(request):
-    if int(request.POST['number'])==request.session["numbers"]:
-        return render(request,"index1.html")
+    if request.method=="POST":
+        request.session['user']=int(request.POST['number'])
+        if request.session['user'] ==request.session["numbers"]:
+            
+        
+            return redirect("/")
 
-    elif  int(request.POST['number']) > request.session["numbers"]:
-        return render(request,"index2.html")
+        elif  request.session['user'] > request.session["numbers"]:
+        
+            return redirect("/")
 
-    elif int(request.POST['number']) < request.session["numbers"]:
-        return render(request,"index3.html")
+        elif request.session['user']< request.session["numbers"]:
+            
+            return redirect("/")
 
 def back(request):
      return redirect("/")
+
+
+def reset(request):
+    request.session.clear()
+    return redirect("/")
+
 
 
 
